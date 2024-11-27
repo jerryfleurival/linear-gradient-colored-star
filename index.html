@@ -1,0 +1,54 @@
+<html><head>
+    <title>Color a Star in CSS</title>
+    <style type="text/css">
+        :root { --size: 600px;  --color:red; }
+       #star { position:relative; margin:auto; width:var(--size); height:var(--size); background:tan; }
+       #triangle, #triangle2, #triangle3 { position:absolute; margin:auto; width:calc(var(--size) / 2); height:calc(var(--size) / 2); 
+              left:50% ;  translate:-50%; }
+       #triangle { rotate:180deg; top:35%; }
+       #triangle2 { transform-origin:center right; transform: translate(-98%) rotate(-108deg); }
+       #triangle3 { transform-origin:center left; transform: translate(97%) rotate(108deg); }
+       
+       .side { position:absolute; width:100%; height:100%; }
+       .a, .b, .c {width:50%; }
+                
+              #triangle .b { background: linear-gradient(36deg, var(--color) 26.5%, transparent 0);
+              backface-visibility: hidden; translate:100%; } 
+
+              #triangle .c { background: linear-gradient(-36deg, var(--color) 26.5%, transparent 0);
+              backface-visibility: hidden; translate:0.1px; } 
+
+              #triangle2 .c { background: linear-gradient(36deg, var(--color) 26.5%, transparent 0);
+              backface-visibility: hidden; translate:100%; } 
+
+              #triangle2 .a { background: linear-gradient(-36deg, var(--color) 26.5%, transparent 0);
+              backface-visibility: hidden; translate:0.1px; } 
+
+              #triangle3 .c { background: linear-gradient(36deg, var(--color) 26.5%, transparent 0);
+              backface-visibility: hidden; translate:100%; }
+
+    </style>
+</head>
+<body> 
+    <div id="star">
+    <div id="triangle">
+      <!-- Border bottom shown only for all 3 divs -->
+       <div class="side a"></div> <!-- Side 1 --> 
+       <div class="side b"></div> <!-- Side 2 -->
+       <div class="side c"></div> <!-- Side 3 -->
+     </div>
+     <div id="triangle2">
+        <!-- Border bottom shown only for all 3 divs -->
+         <div class="side a"></div> <!-- Side 1 --> 
+         <div class="side b"></div> <!-- Side 2 -->
+         <div class="side c"></div> <!-- Side 3 -->
+       </div>
+       <div id="triangle3">
+        <!-- Border bottom shown only for all 3 divs -->
+         <div class="side a"></div> <!-- Side 1 --> 
+         <div class="side b"></div> <!-- Side 2 -->
+         <div class="side c"></div> <!-- Side 3 -->
+       </div>
+    </div>
+</body>
+</html>
